@@ -3,7 +3,7 @@
     <div class="container">
 
         <div class="row">
-            <h2 class="d-flex justify-content-center w-100 py-3">Dams</h2>
+            <h2 class="d-flex justify-content-center w-100 py-3">News</h2>
             <div class="d-flex justify-content-center w-100 pb-5">
                 <div class="underline"></div>
             </div>
