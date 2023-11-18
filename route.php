@@ -54,7 +54,7 @@ $routes->post("create","DamController@create");
 $routes->get("damlist","DamController@index");
 $routes->get("destoryDam","DamController@delete");
 $routes->get("editDam","DamController@edit");
-
+$routes->post("updateDam","DamController@update");
 
 
 ?>

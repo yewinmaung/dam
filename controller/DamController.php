@@ -30,6 +30,38 @@ function delete(){
     redirect("damlist");
     //view("admin/damlist",["dams"=>$dams],["destricts"=>$destricts],["towns"=>$towns]);
 }
+function update(){
+    $temFile = $_FILES['image']['tmp_name'];
+    $temName = $_FILES['image']['name'];
+    $folderName="upload_img";
+    $storeFolder = $folderName . '/';
+    $img=$storeFolder.uniqid().$temName;
+
+    function run($temFile, $img, $folderName)
+    {
+
+        if (!file_exists($folderName)){
+            mkdir($folderName);
+        }
+
+        move_uploaded_file($temFile, $img);
+    }
+    run($temFile,$img,$folderName);
+
+    $dam=App::get("database")->updateData("daminfo",[
+
+        'name'=>$_POST['name'],
+        'img'=>$img,
+        'district_id'=>$_POST['destrict'],
+        'town_id'=>$_POST['town'],
+        'date'=>$_POST['date'],
+        'mass'=>$_POST['mass'],
+        'description'=>$_POST['desc'],
+        'updated_at'=>timestamp(),
+
+    ],$id=$_POST['id']);
+    redirect("damlist");
+}
 function create(){
     $temFile = $_FILES['image']['tmp_name'];
     $temName = $_FILES['image']['name'];

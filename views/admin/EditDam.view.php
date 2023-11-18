@@ -20,7 +20,7 @@
                     <div class="">
 
 
-                        <form action="#" method="post" enctype="multipart/form-data" class="w-100 d-flex justify-content-center align-items-center">
+                        <form action="updateDam" method="post" enctype="multipart/form-data" class="w-100 d-flex justify-content-center align-items-center">
                             <?php foreach ($dams as $dam):?>
                             <div class="card w-50 p-2">
                                 <div class="row mb-3">
@@ -32,9 +32,11 @@
                                     </div>
                                 </div>
 
+                                <input type="hidden" name="id" value="<?php echo $dam->id;?>" placeholder="Dam name" class="form-control" id="inputEmail3">
+
 
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="name" value="<?php echo $dam->name;?>" placeholder="Dam name" class="form-control" id="inputEmail3">
+                                   <input type="text" name="name" value="<?php echo $dam->name;?>" placeholder="Dam name" class="form-control" id="inputEmail3">
                                     <label for="floatingInput">Dam Name</label>
                                 </div>
 
